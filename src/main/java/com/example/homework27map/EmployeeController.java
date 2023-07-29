@@ -12,7 +12,8 @@ import java.util.Collection;
 public class EmployeeController {
     private final EmployeeService employeeService;
 
-    public EmployeeController(EmployeeService employeeService) { // подчёркивает красным параметр
+    public EmployeeController(EmployeeService employeeService) { /* подчёркивает красным параметр*/
+
         this.employeeService = employeeService;
     }
     @GetMapping(path = "/add")
