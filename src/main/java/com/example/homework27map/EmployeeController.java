@@ -12,13 +12,16 @@ import java.util.Collection;
 public class EmployeeController {
     private final EmployeeService employeeService;
 
-    public EmployeeController(EmployeeService employeeService) { /* подчёркивает красным параметр*/
+    public EmployeeController(EmployeeService employeeService) {
 
         this.employeeService = employeeService;
     }
     @GetMapping(path = "/add")
-    public Employee addEmployee(@RequestParam String firstName, @RequestParam String lastName) {
-        return employeeService.addEmployee(firstName, lastName);
+    public Employee addEmployee(@RequestParam String firstName,
+                                @RequestParam String lastName,
+                                @RequestParam double salary,
+                                @RequestParam int department) {
+        return employeeService.addEmployee(firstName, lastName, salary, department);
     }
     @GetMapping(path = "/remove")
     public Employee removeEmployee(@RequestParam String firstName, @RequestParam String lastName) {

@@ -3,7 +3,7 @@ package com.example.homework27map;
 import java.util.Collection;
 
 public interface EmployeeService {
-    Employee addEmployee(String firstName, String lastName);
+    Employee addEmployee(String firstName, String lastName, double salary, int department);
 
     Employee removeEmployee(String firstName, String lastName);
 

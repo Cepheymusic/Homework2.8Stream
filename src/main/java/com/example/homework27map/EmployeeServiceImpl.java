@@ -12,11 +12,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
     public static final int MAX_EMPLOYEE_COUNT = 4;
     @Override
-    public Employee addEmployee(String firstName, String lastName) {
+    public Employee addEmployee(String firstName, String lastName, double salary, int department) {
         if (employeeMap.size() == MAX_EMPLOYEE_COUNT) { //проходимся по списку сотрудников
             throw new EmployeeStorageIsFullException("Превышен лимит сотрудников");
         }
-        Employee employee = new Employee(firstName, lastName);
+        Employee employee = new Employee(firstName, lastName, salary, department);
         String key = firstName + lastName;
 
         if(employeeMap.containsKey(key)) {
