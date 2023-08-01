@@ -34,7 +34,7 @@ public class DepartmentServiceImpl implements DepartmentService {
                 .collect(Collectors.toList());
     }
     @Override
-    public Map<Integer, List<Employee>> getEmployeeByDepartment(int department) {
+    public Map<Integer, List<Employee>> getEmployeeByDepartment() {
         return employeeService.findAll().stream()
                 .collect(Collectors.groupingBy(employee -> employee.getDepartment()));
     }
